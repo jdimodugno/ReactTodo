@@ -1,7 +1,7 @@
 var React = require('react');
 var Search = require('Search');
 var TodoList = require('TodoList');
-var TodoAdd = require('TodoAdd');
+var AddTodo = require('AddTodo');
 
 var Main = React.createClass({
   getInitialState: function () {
@@ -21,6 +21,9 @@ var Main = React.createClass({
       }]
     };
   },
+  handleAddTodo: function (text) {
+    alert(text);
+  },
   render: function () {
     var {todos} = this.state;
     return (
@@ -28,7 +31,7 @@ var Main = React.createClass({
         <h3> Main </h3>
         <Search/>
         <TodoList todos={todos}/>
-        <TodoAdd/>
+        <AddTodo onAddTodo={this.handleAddTodo}/>
       </div>
     )
   }
