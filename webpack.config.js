@@ -28,7 +28,7 @@ module.exports = {
       './app/api'
     ],
     alias: {
-      TodoApp: 'app/components/TodoApp.jsx',
+      actions: 'app/actions/actions.jsx',
       applicationStyle: 'app/styles/app.scss'
     },
     extensions: ['', '.js', '.jsx']
