@@ -30,6 +30,7 @@ module.exports = {
     alias: {
       actions: 'app/actions/actions.jsx',
       reducers: 'app/reducers/reducers.jsx',
+      configureStore: 'app/store/configureStore.jsx',
       applicationStyle: 'app/styles/app.scss'
     },
     extensions: ['', '.js', '.jsx']
