@@ -1,7 +1,7 @@
 var React = require('react');
-var TodoSearch = require('TodoSearch');
-var TodoList = require('TodoList');
-var AddTodo = require('AddTodo');
+import TodoSearch from 'TodoSearch';
+import TodoList from 'TodoList'
+import AddTodo from 'AddTodo'
 var uuid = require('node-uuid');
 var moment = require('moment');
 var TodoAPI = require('TodoAPI');
@@ -17,26 +17,6 @@ var Main = React.createClass({
   componentDidUpdate: function () {
     TodoAPI.setTodos(this.state.todos);
   },
-  handleSearch: function (showCompleted, searchText) {
-    this.setState({
-      showCompleted: showCompleted,
-      searchText: searchText.toLowerCase()
-    });
-  },
-  handleAddTodo: function (text) {
-    this.setState({
-      todos: [
-        ...this.state.todos,
-        {
-          id: uuid(),
-          text: text,
-          completed: false,
-          createdAt: moment().unix(),
-          completedAt: undefined
-        }
-      ]
-    });
-  },
   render: function () {
     var {todos, showCompleted, searchText} = this.state;
     var filteredTodos = TodoAPI.filterTodos(todos, showCompleted, searchText);
@@ -47,9 +27,9 @@ var Main = React.createClass({
         <div className='row'>
           <div className='columns small-centered small-12 medium-6 large-5'>
             <div className='container'>
-              <TodoSearch onSearch={this.handleSearch}/>
+              <TodoSearch/>
               <TodoList/>
-              <AddTodo onAddTodo={this.handleAddTodo}/>
+              <AddTodo/>
             </div>
           </div>
         </div>

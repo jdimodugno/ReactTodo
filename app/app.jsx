@@ -10,10 +10,6 @@ store.subscribe(() => {
   console.log('new state', store.getState());
 });
 
-store.dispatch(actions.addTodo('Test redux'));
-store.dispatch(actions.setSearchText('red'));
-store.dispatch(actions.toggleShowCompleted());
-
 // Load foundation
 $(document).foundation();
 require('style!css!sass!applicationStyle');
