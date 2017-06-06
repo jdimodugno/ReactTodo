@@ -16,6 +16,21 @@ describe('Actions', () => {
     expect(addTodoAction.text).toBe('run');
   });
 
+  it('should generate add todos action', () => {
+    var todos = [{
+      id: 111,
+      test: 'Lalala',
+      completed: false,
+      completedAt: undefined,
+      createdAt: 123
+    }];
+
+    var addTodoAction = actions.addTodos(todos);
+
+    expect(addTodoAction.type).toBe('ADD_TODOS');
+    expect(addTodoAction.todos.length).toBe(1);
+  });
+
   it('should generate toggle show completed action', () => {
     var toggleShowCompletedAction = actions.toggleShowCompleted();
 
